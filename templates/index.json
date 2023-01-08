@@ -4,7 +4,7 @@
       "type": "cover-page",
       "settings": {
         "cover_img": "shopify:\/\/shop_images\/1.webp",
-        "cover_img_link": "shopify:\/\/collections"
+        "cover_img_link": "shopify:\/\/collections\/all"
       }
     }
   },

@@ -194,6 +194,12 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "logo": {
+        "type": "logo",
+        "settings": {
+          "logo_font_size": 28
+        }
       }
     },
     "content_for_index": [

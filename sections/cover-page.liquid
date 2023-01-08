@@ -1,0 +1,39 @@
+{{ 'section-cover-page.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.cover_img != blank -%}
+  {%- style -%}
+    .cover-page {
+      background-image: url('{{ section.settings.cover_img | image_url }}');
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
+<div class="cover-page">
+  <div class="cover-page_image-container"></div>
+  <a href="{{ section.settings.cover_img_link }}">
+    <div class="cover-page_title-container">
+      <h1 class="cover-page_title">{{ section.settings.cover_title }}</h1>
+    </div>
+  </a>
+</div>
+
+{% schema %}
+  {
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "cover_img",
+        "label": "Image"
+      }, {
+        "type": "url",
+        "id": "cover_img_link",
+        "label": "Link"
+      }, {
+        "type": "text",
+        "id": "cover_title",
+        "label": "Heading",
+        "default": "2144 SS23 NOID-VIS"
+      }
+    ]
+  }
+{% endschema %}

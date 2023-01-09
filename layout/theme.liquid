@@ -253,13 +253,18 @@
     {%- endif -%}
 
     {% if template.name != "index" %}
+    <div class="main-header">
     {% section 'logo' %}
     {% section 'nav-items' %}
+    </div>
     {% endif %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
-
+    {% if template.name != "index" %}
+    <div class="bottom-margin">
+    </div>
+    {% endif %}
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>

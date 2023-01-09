@@ -1,5 +1,4 @@
 .logo-container {
-  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,10 +7,18 @@
 }
 .logo-fixed {
   position: fixed;
-  height: 80px;
+  height: 100px;
   left: 0%;
   top: 0%;
   right: 0%;
   bottom: auto;
   z-index: 1000;
+}
+@media screen and (max-width: 750px) {
+  .logo-container {
+    margin: auto;
+  }
+  .logo-fixed {
+    height: 65px;
+  }
 }

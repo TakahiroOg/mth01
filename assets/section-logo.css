@@ -3,4 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 40%;
+  margin-left: 40%;
+}
+.logo-fixed {
+  position: fixed;
+  height: 80px;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: auto;
+  z-index: 1000;
 }

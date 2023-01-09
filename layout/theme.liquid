@@ -209,8 +209,7 @@
         min-height: 100%;
         margin: 0;
         font-size: 1.1rem;
-        letter-spacing: 0.06rem;
-        line-height: calc(1 + 0.8 / var(--font-body-scale));
+        line-height: 150%;
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
@@ -218,7 +217,7 @@
 
       @media screen and (min-width: 750px) {
         body {
-          font-size: 1.6rem;
+          font-size: 1.1rem;
         }
       }
     {% endstyle %}
@@ -262,6 +261,7 @@
       {{ content_for_layout }}
     </main>
     {% if template.name != "index" %}
+    {% section 'footer' %}
     <div class="bottom-margin">
     </div>
     {% endif %}

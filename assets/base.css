@@ -393,8 +393,7 @@ body,
 
 .text-body {
   font-size: 1.5rem;
-  letter-spacing: 0.06rem;
-  line-height: calc(1 + 0.8 / var(--font-body-scale));
+  line-height: 1.5;
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
@@ -415,7 +414,7 @@ body,
   }
 }
 
-h1, h2, h3, h4, h5, p, a, span {
+h1, h2, h3, h4, h5, p, a, span, legend {
   font-family: 'Fake receipt' !important;
 }
 
@@ -567,7 +566,6 @@ blockquote {
 .customer .field input,
 .customer select,
 .field__input,
-.form__label,
 .select__select {
   font-size: 1.3rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
@@ -1014,7 +1012,6 @@ summary::-webkit-details-marker {
 .subtitle {
   font-size: 1.8rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
-  letter-spacing: 0.06rem;
   color: rgba(var(--color-foreground), 0.7);
 }
 
@@ -2259,9 +2256,13 @@ input[type='checkbox'] {
 .header-wrapper {
   display: block;
   position: relative;
-  background-color: rgb(var(--color-background));
 }
 
+@media screen and (min-width: 750px) {
+  .header-wrapper {
+    background-color: transparent;
+  }
+}
 .header-wrapper--border-bottom {
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
@@ -2608,11 +2609,17 @@ details[open] > .header__icon--menu .icon-hamburger {
 }
 
 details[open] > .header__submenu {
-  animation: animateMenuOpen var(--duration-default) ease;
+  animation: animateMenuOpenReverse var(--duration-default) ease;
   animation-fill-mode: forwards;
   z-index: 1;
 }
-
+@media only screen and (min-width: 750px) {
+  details[open] > .header__submenu {
+    animation: animateMenuOpen var(--duration-default) ease;
+    animation-fill-mode: forwards;
+    z-index: 1;
+  }
+}
 @media (prefers-reduced-motion) {
   details[open] > .header__submenu {
     opacity: 1;
@@ -2759,6 +2766,17 @@ details-disclosure > details {
   0% {
     opacity: 0;
     transform: translateY(-1.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes animateMenuOpenReverse {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
   }
 
   100% {

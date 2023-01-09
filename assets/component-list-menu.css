@@ -9,6 +9,15 @@
   border: 1px solid rgba(var(--color-foreground), 0.2);
 }
 
+@media screen and (max-width: 749px) {
+  .list-menu--disclosure {
+    bottom: 100%;
+    left: auto;
+    right: 0%;
+    top: auto;
+  }
+}
+
 .list-menu--disclosure:focus {
   outline: none;
 }

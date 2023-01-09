@@ -3,7 +3,7 @@
   class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
 >
-  {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {{ 'section-main-product-new.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-rte.css' | asset_url | stylesheet_tag }}
@@ -92,7 +92,6 @@
                   product: product,
                   use_variant: true,
                   show_badges: true,
-                  price_class: 'price--large'
                 -%}
               </div>
               {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}

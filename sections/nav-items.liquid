@@ -123,7 +123,7 @@
                       <summary class="header__menu-item list-menu__item link focus-inset">
                         <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>
                           <div class="nav-icon">
-                          {% render 'icon-menu-opener' %}
+                          {% render 'icon-m' %}
                           </div>
                         </span>
                       </summary>
@@ -131,7 +131,7 @@
                         {%- for childlink in link.links -%}
                           <li>
                             {%- if childlink.links == blank -%}
-                              <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                              <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset captiicon-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                                 {{ childlink.title | escape }}
                               </a>
                             {%- else -%}
@@ -352,19 +352,18 @@
 
   customElements.define('sticky-header', StickyHeader);
 
+  var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   let items = document.querySelector(".header__inline-menu").querySelectorAll("details");
-  items.forEach(item => {
-    item.addEventListener("mouseover", () => {
-      item.setAttribute("open", true);
-      item.querySelector("ul").addEventListener("mouseleave", () => {
+  if ( width > 1000) {
+    items.forEach(item => {
+      item.addEventListener("mouseover", () => {
+        item.setAttribute("open", true);
+      });
+      item.addEventListener("mouseleave", () => {
         item.removeAttribute("open");
       });
-    item.addEventListener("mouseleave", () => {
-      item.removeAttribute("open");
     });
-  });
-  
-  });
+  }
 {% endjavascript %}
 
 <script type="application/ld+json">

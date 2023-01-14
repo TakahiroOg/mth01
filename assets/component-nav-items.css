@@ -6,14 +6,22 @@
   bottom: 0%;
   z-index: 1000;
 }
-
+.nav-icon {
+  display: flex;
+}
 @media screen and (min-width: 750px) {
   .nav-items_fixed {
     top: 0%;
     bottom: auto;
   }
 }
-@media screen and (max-width: 749px) {
-  .nav-items_fixed {
+@media screen and (min-width: 1000px) {
+  details[menu-open-hover] > .header__submenu {
+    animation: animateMenuOpen var(--duration-default) ease;
+    animation-fill-mode: forwards;
+    z-index: 1;
   }
+}
+details[menu-open-hover] {
+  background: red;
 }

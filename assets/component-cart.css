@@ -64,9 +64,10 @@ cart-items {
 .cart__items--disabled {
   pointer-events: none;
 }
-
-.cart__footer {
-  padding: 4rem 0 0;
+@media screen and (max-width: 749px) {
+  .cart__footer {
+    padding: 4rem 0 0;
+  }
 }
 
 .cart__footer-wrapper:last-child .cart__footer {

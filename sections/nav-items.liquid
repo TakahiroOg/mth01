@@ -157,7 +157,7 @@
                     </details>
                   </header-menu>
                 {%- else -%}
-                  <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                  <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}{% if link.url contains 'instagram' %} target="_blank"{% endif %}>
                     {%- if link.title == 'Products' %}
                     <div class="nav-icon">
                       {% render 'icon-shop' %}

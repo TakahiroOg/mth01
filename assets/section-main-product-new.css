@@ -15,8 +15,7 @@
 }
 .variant-wrapper {
   display: flex;
-  justify-content: space-between;
-  max-width: 250px;
+  gap: 3rem;
 }
 .product--no-media {
   max-width: 57rem;
@@ -191,6 +190,10 @@ variant-selects {
   padding-left: 0;
 }
 
+.product-form.product-form {
+  padding-top: 1rem;
+}
+
 fieldset.product-form__input .form__label {
   margin-bottom: 0.2rem;
 }
@@ -210,18 +213,26 @@ fieldset.product-form__input .form__label {
   color: rgba(var(--color-foreground));
   border-radius: var(--variant-pills-radius);
   color: rgb(var(--color-foreground));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  font-size: 1.4rem;
-  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
+  letter-spacing: -.1em;
   line-height: 1;
   text-align: center;
   transition: border var(--duration-short) ease;
   cursor: pointer;
   position: relative;
+}
+
+.square-variant-button {
+  width: 3.5rem;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.variant-button {
+  padding: 1rem;
+  display: block;
 }
 
 .product-form__input input[type='radio'] + label:before {

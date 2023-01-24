@@ -384,41 +384,7 @@
         </a>
       </div>
     </div>
-    {%- if section.settings.media_position == 'right' -%}
-      {% comment %} Duplicate gallery to display after product content on tablet/desktop breakpoint {% endcomment %}
-      <div class="grid__item product__media-wrapper small-hide">
-        {% render 'product-media-gallery', variant_images: variant_images, is_duplicate: true %}
-      </div>
-    {%- endif -%}
   </div>
-
-  {% render 'product-media-modal' variant_images: variant_images %}
-
-  {% assign popups = section.blocks | where: 'type', 'popup' %}
-  {%- for block in popups -%}
-    <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
-      <div
-        role="dialog"
-        aria-label="{{ block.settings.text }}"
-        aria-modal="true"
-        class="product-popup-modal__content"
-        tabindex="-1"
-      >
-        <button
-          id="ModalClose-{{ block.id }}"
-          type="button"
-          class="product-popup-modal__toggle"
-          aria-label="{{ 'accessibility.close' | t }}"
-        >
-          {% render 'icon-close' %}
-        </button>
-        <div class="product-popup-modal__content-info">
-          <h1 class="h2">{{ block.settings.page.title }}</h1>
-          {{ block.settings.page.content }}
-        </div>
-      </div>
-    </modal-dialog>
-  {%- endfor -%}
 
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>

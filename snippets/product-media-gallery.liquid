@@ -54,14 +54,9 @@
 >
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
   <slider-component id="GalleryViewer-{{ section.id }}{{ id_append }}" class="slider-mobile-gutter">
-    {%- unless is_duplicate -%}
-      <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
-        {{ 'accessibility.skip_to_product_info' | t }}
-      </a>
-    {%- endunless -%}
     <ul
       id="Slider-Gallery-{{ section.id }}{{ id_append }}"
-      class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
+      class="product__media-list contains-media grid grid--peek list-unstyled"
       role="list"
     >
       {%- if product.selected_or_first_available_variant.featured_media != null -%}
@@ -120,32 +115,7 @@
         {%- endunless -%}
       {%- endfor -%}
     </ul>
-    {%- unless is_duplicate -%}
-      <div class="slider-buttons no-js-hidden quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
-        <button
-          type="button"
-          class="slider-button slider-button--prev"
-          name="previous"
-          aria-label="{{ 'general.slider.previous_slide' | t }}"
-        >
-          {% render 'icon-caret' %}
-        </button>
-        <div class="slider-counter caption">
-          <span class="slider-counter--current">1</span>
-          <span aria-hidden="true"> / </span>
-          <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-          <span class="slider-counter--total">{{ media_count }}</span>
-        </div>
-        <button
-          type="button"
-          class="slider-button slider-button--next"
-          name="next"
-          aria-label="{{ 'general.slider.next_slide' | t }}"
-        >
-          {% render 'icon-caret' %}
-        </button>
-      </div>
-    {%- endunless -%}
+
   </slider-component>
   {%- if first_3d_model -%}
     <button

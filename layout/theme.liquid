@@ -270,6 +270,11 @@
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
 
+    {%- if template contains 'index' -%}
+    <script>
+    window.location.href = '/products/machina-hoodie-graphite';
+    </script>
+    {%- endif -%}
     <script>
       window.shopUrl = '{{ request.origin }}';
       window.routes = {

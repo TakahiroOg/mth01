@@ -15,7 +15,7 @@
 }
 .variant-wrapper {
   display: flex;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 .product--no-media {
   max-width: 57rem;
@@ -213,7 +213,7 @@ fieldset.product-form__input .form__label {
   color: rgba(var(--color-foreground));
   border-radius: var(--variant-pills-radius);
   color: rgb(var(--color-foreground));
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: -.1em;
   line-height: 1;
   text-align: center;

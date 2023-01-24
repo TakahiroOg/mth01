@@ -159,9 +159,13 @@
                 {%- else -%}
                   <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}{% if link.url contains 'instagram' %} target="_blank"{% endif %}>
                     {%- if link.title == 'Products' %}
-                    <div class="nav-icon">
-                      {% render 'icon-shop' %}
-                    </div>
+                      {% if section.settings.icon_img_shop != blank %}
+                        <img src="{{ section.settings.icon_img_shop | image_url: width: 500 }}" width="20" height="20">
+                      {% else %}
+                        <div class="nav-icon">
+                          {% render 'icon-shop' %}
+                        </div>
+                      {% endif %}
                     {%- elsif link.title == 'Instagram' -%}
                     <div class="nav-icon">
                       {% render 'icon-ig' %}
@@ -581,6 +585,11 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 20
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_img_shop",
+      "label": "Shop icon"
     }
   ]
 }

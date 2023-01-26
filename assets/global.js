@@ -796,6 +796,20 @@ class VariantSelects extends HTMLElement {
         return this.options[index] === option;
       }).includes(false);
     });
+
+    if (!this.currentVariant) {
+      let x = this.getVariantData().filter((variant) => {
+        return variant.option1 == this.options[0] && variant.option2 == this.options[1];
+      });
+      this.currentVariant = x[0];
+
+      let y = document.querySelectorAll('[name="Color"]');
+      y.forEach((input) => {
+        if (input.defaultValue == this.currentVariant.option3) {
+          input.checked = true;
+        }
+      })
+    }
   }
 
   updateMedia() {

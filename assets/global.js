@@ -778,6 +778,7 @@ class VariantSelects extends HTMLElement {
       this.setUnavailable();
     } else {
       this.updateMedia();
+      this.filterMedia();
       this.updateURL();
       this.updateVariantInput();
       this.renderProductInfo();
@@ -808,6 +809,20 @@ class VariantSelects extends HTMLElement {
     if (!modalContent) return;
     const newMediaModal = modalContent.querySelector( `[data-media-id="${this.currentVariant.featured_media.id}"]`);
     modalContent.prepend(newMediaModal);
+  }
+
+  filterMedia() {
+    let a = document.querySelectorAll('[thumbnail-color]');
+    a.forEach(item => item.style.display = 'none');
+
+    let selected_variant = this.currentVariant.featured_media.alt;
+    let selected_attribute = '[thumbnail-color="' + selected_variant + '"]';
+
+    let b = document.querySelectorAll(selected_attribute);
+
+    if (selected_variant == selected_variant) {
+      b.forEach(item => item.style.display = 'block');
+    }
   }
 
   updateURL() {

@@ -766,6 +766,12 @@ class VariantSelects extends HTMLElement {
   }
 
   onVariantChange() {
+    // let t = '';
+    // document.querySelectorAll('[name="Color"]').forEach((item) => {
+    //   if (item.checked) {
+    //     t = item;
+    //   }
+    // });
     this.updateOptions();
     this.updateMasterId();
     this.toggleAddButton(true, '', false);

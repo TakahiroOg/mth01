@@ -26,12 +26,12 @@
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-    <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
+    <a href="{{ section.settings.logo_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
   </div>
 
   <div class="cart__warnings">
     <h5 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h5>
-    <a href="{{ routes.all_products_collection_url }}" class="button">
+    <a href="{{ section.settings.logo_url }}" class="button">
       {{ 'general.continue_shopping' | t }}
     </a>
 
@@ -373,6 +373,11 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "url",
+      "id": "cart_url",
+      "label": "Cart URL"
     }
   ]
 }

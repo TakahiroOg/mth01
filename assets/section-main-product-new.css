@@ -30,7 +30,7 @@
   .product__column-sticky {
     display: block;
     position: sticky;
-    top: 10rem;
+    top: 0;
     z-index: 2;
   }
 
@@ -70,7 +70,7 @@
   }
 
   .product--large:not(.product--no-media) .product__info-wrapper {
-    padding: 0 0 0 4rem;
+    padding: 0 0 0 2rem;
     max-width: 35%;
     width: calc(35% - var(--grid-desktop-horizontal-spacing) / 2);
   }

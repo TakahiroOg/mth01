@@ -9,6 +9,14 @@
 .nav-icon {
   display: flex;
 }
+@media screen and (max-width: 749px) {
+  .nav-icon svg, .header__icon--cart svg {
+    max-width: 25px;
+  }
+  summary .nav-icon svg {
+    max-width: 20px;
+  }
+}
 @media screen and (min-width: 750px) {
   .nav-items_fixed {
     top: 0%;

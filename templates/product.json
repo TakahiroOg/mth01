@@ -29,6 +29,14 @@
           "settings": {
             "show_dynamic_checkout": false
           }
+        },
+        "640311b2-6203-4aec-953e-32e7893d05d9": {
+          "type": "text",
+          "settings": {
+            "text": "Shipping & Returns",
+            "shipping_link": "shopify:\/\/pages\/contact",
+            "text_style": "body"
+          }
         }
       },
       "block_order": [
@@ -36,7 +44,8 @@
         "price",
         "description",
         "variant_picker",
-        "buy_buttons"
+        "buy_buttons",
+        "640311b2-6203-4aec-953e-32e7893d05d9"
       ],
       "settings": {
         "enable_sticky_info": true,

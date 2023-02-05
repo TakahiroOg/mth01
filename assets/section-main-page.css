@@ -11,3 +11,20 @@
   width: 52.5rem;
   height: 52.5rem;
 }
+
+.page-container-subscribe {
+  height: 20vh;
+  display: block;
+}
+.paragraph_content.news {
+  text-align: center;
+}
+@media screen and (min-width: 750px) {
+  .paragraph_wrapper {
+    width: 60%;
+    margin: auto;
+  }
+}
+.about-image {
+  min-height: 30vh;
+}

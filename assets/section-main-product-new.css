@@ -10,9 +10,9 @@
     flex-direction: column-reverse;
   }
 }
-.product__title h1 {
+/* .product__title h1 {
   font-size: 1.1rem;
-}
+} */
 .variant-wrapper {
   display: flex;
   gap: 1.5rem;
@@ -30,7 +30,7 @@
   .product__column-sticky {
     display: block;
     position: sticky;
-    top: 10rem;
+    top: 0;
     z-index: 2;
   }
 
@@ -70,7 +70,7 @@
   }
 
   .product--large:not(.product--no-media) .product__info-wrapper {
-    padding: 0 0 0 4rem;
+    padding: 0 0 0 2rem;
     max-width: 35%;
     width: calc(35% - var(--grid-desktop-horizontal-spacing) / 2);
   }
@@ -172,7 +172,7 @@
   flex: 0 0 100%;
   padding: 0;
   margin: 0 0 1.2rem 0;
-  max-width: 37rem;
+  max-width: 65%;
   min-width: fit-content;
   border: none;
 }
@@ -191,11 +191,11 @@ variant-selects {
 }
 
 .product-form.product-form {
-  padding-top: 1rem;
+  margin-top: 2vh;
 }
 
 fieldset.product-form__input .form__label {
-  margin-bottom: 0.2rem;
+  margin-bottom: 1rem;
 }
 
 .product-form__input input[type='radio'] {
@@ -208,23 +208,25 @@ fieldset.product-form__input .form__label {
 .variant-pills {
   display: flex;
 }
+.size-options {
+  justify-content: space-between;
+}
 .product-form__input input[type='radio'] + label {
   background-color: rgb(var(--color-base-background-2));
-  color: rgba(var(--color-foreground));
+  color: #666;
   border-radius: var(--variant-pills-radius);
-  color: rgb(var(--color-foreground));
-  font-size: 1rem;
   letter-spacing: -.1em;
   line-height: 1;
   text-align: center;
   transition: border var(--duration-short) ease;
   cursor: pointer;
   position: relative;
+  font-size: 1.1vh;
 }
 
 .square-variant-button {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3vh;
+  height: 3vh;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -305,6 +307,7 @@ fieldset.product-form__input .form__label {
 
 .product-form__submit {
   margin-bottom: 1rem;
+  max-width: 65%;
 }
 
 .no-js .product-form__submit.button--secondary {
@@ -349,6 +352,20 @@ fieldset.product-form__input .form__label {
 
 .product__text {
   margin-bottom: 0;
+  margin-top: 2vh;
+}
+.p_subtitle {
+  letter-spacing: 0;
+}
+.variant_description {
+  display:none;
+}
+.normal-link {
+  text-decoration: none;
+  color: #000;
+}
+.shipping-link-container {
+  margin-bottom: 1.2rem;
 }
 
 a.product__text {

@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page-news",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "720ebe2c-5a5b-408f-96e0-1f69eee41cc7": {
+      "type": "newsletter",
+      "blocks": {
+        "template--17861272240429__720ebe2c-5a5b-408f-96e0-1f69eee41cc7-1675429342b1d13fa3-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>subscribe to the Maul the hyena newsletter for drop updates that are not available on social media platforms, exclusive sales and discounts, as well as early access to future products.<\/p>"
+          }
+        },
+        "template--17861272240429__720ebe2c-5a5b-408f-96e0-1f69eee41cc7-1675429342b1d13fa3-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--17861272240429__720ebe2c-5a5b-408f-96e0-1f69eee41cc7-1675429342b1d13fa3-1",
+        "template--17861272240429__720ebe2c-5a5b-408f-96e0-1f69eee41cc7-1675429342b1d13fa3-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "720ebe2c-5a5b-408f-96e0-1f69eee41cc7"
+  ]
+}

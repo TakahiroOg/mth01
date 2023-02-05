@@ -19,11 +19,17 @@
 {%- endstyle -%}
 
 <div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  {% comment %} <h1 class="main-page-title page-title h0">
-    {{ page.title | escape }}
-  </h1> {% endcomment %}
   <div class="rte">
-    {{ page.content }}
+    <div class="page-container">
+      <div class="about-image">
+        {% if section.settings.about_img != null %}
+          <img src="{{ section.setting.about_img }}" alt="" width="800" height="auto">
+        {% endif %}
+      </div>
+      <div class="paragraph_wrapper">
+        {{ page.content }}
+      </div>
+    </div>
   </div>
 </div>
 
@@ -56,6 +62,11 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "image_picker",
+      "id": "about_img",
+      "label": "Image"
     }
   ]
 }

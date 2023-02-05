@@ -766,12 +766,7 @@ class VariantSelects extends HTMLElement {
   }
 
   onVariantChange() {
-    // let t = '';
-    // document.querySelectorAll('[name="Color"]').forEach((item) => {
-    //   if (item.checked) {
-    //     t = item;
-    //   }
-    // });
+    this.t = document.querySelectorAll('[name="Color"]');
     this.updateOptions();
     this.updateMasterId();
     this.toggleAddButton(true, '', false);
@@ -784,11 +779,15 @@ class VariantSelects extends HTMLElement {
       this.setUnavailable();
     } else {
       this.updateMedia();
-      this.filterMedia();
+      if (this.t.length > 0) {
+        this.filterMedia();
+      }
       this.updateURL();
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
+
+      this.updateVariantDetails(this.currentVariant);
     }
   }
 
@@ -803,7 +802,7 @@ class VariantSelects extends HTMLElement {
       }).includes(false);
     });
 
-    if (!this.currentVariant) {
+    if (!this.currentVariant && this.t.length > 0) {
       let x = this.getVariantData().filter((variant) => {
         return variant.option1 == this.options[0] && variant.option2 == this.options[1];
       });
@@ -978,6 +977,17 @@ class VariantSelects extends HTMLElement {
     this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
     return this.variantData;
   }
+
+  updateVariantDetails(currentVariant){
+    const variants = document.querySelectorAll('[data-variant-id]')
+  
+    variants.forEach( function(variant) {
+        variant.style.display = 'none';
+        if(variant.dataset.variantId == currentVariant.id){
+          variant.style.display = 'block'
+        }
+      });
+   }
 }
 
 customElements.define('variant-selects', VariantSelects);

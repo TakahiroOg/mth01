@@ -23,7 +23,10 @@
           alt: logo_alt
         }}
       {%- else -%}
-        <span class="header_logo">{{ shop.name }}</span>
+        <div class="svg-logo-wrapper">
+          <img src="{{ 'icon-logo.svg' | asset_url }}" alt="" class="svg-logo" width="1000" height="110">
+        </div>
+        {% comment %} <span class="header_logo">{{ shop.name }}</span> {% endcomment %}
       {%- endif -%}
     </a>
   </div>

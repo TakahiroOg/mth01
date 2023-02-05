@@ -26,7 +26,7 @@
           {% else %}
             <legend class="form__label">{{ option.name }}</legend>
           {% endif %}
-          <div class="variant-wrapper">
+        <div class="variant-wrapper{% if option.name == 'Size' %} size-options{% endif %}">
           {% render 'product-variant-options', product: product, option: option, block: block %}
           </div>
         </fieldset>

@@ -71,12 +71,20 @@
             {%- when '@app' -%}
               {% render block %}
             {%- when 'text' -%}
-              <p
-                class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
-                {{ block.shopify_attributes }}
-              >
-                {{- block.settings.text -}}
-              </p>
+              {% if block.settings.shipping_link != blank %}
+                <div class="shipping-link-container">
+                  <a href="{{ block.settings.shipping_link }}" class="normal-link">
+                    <span class="product__text">{{- block.settings.text -}}</span>
+                  </a>
+                </div>
+              {% else %}
+                <span
+                  class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                  {{ block.shopify_attributes }}
+                >
+                  {{- block.settings.text -}}
+                </span>
+              {% endif %}
             {%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
                 <h1>{{ product.title | escape }}</h1>
@@ -163,6 +171,12 @@
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                   {{ product.description }}
                 </div>
+              {% else %}
+                {% for variant in product.variants %}
+                  <div class="variant_description" data-variant-id="{{variant.id}}" {% if product.selected_or_first_available_variant.id == variant.id %} style="display: block;" {% endif %}> 
+                    {{ variant.metafields.custom.variant_description }}
+                  </div>
+                {% endfor %}
               {%- endif -%}
             {%- when 'sku' -%}
               <p
@@ -416,6 +430,11 @@
           "id": "text",
           "default": "Text block",
           "label": "t:sections.main-product.blocks.text.settings.text.label"
+        },
+        {
+          "type": "url",
+          "id": "shipping_link",
+          "label": "shipping link"
         },
         {
           "type": "select",

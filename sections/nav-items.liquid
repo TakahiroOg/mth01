@@ -30,7 +30,6 @@
     justify-self: start;
     margin-left: -1.2rem;
   }
-
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo {
       width: 75%;
@@ -41,8 +40,40 @@
     header-drawer {
       display: none;
     }
+    .nav-icon,
+    .header__icon--cart svg {
+      display: none;
+    }
+    .menu-item_products,
+    .menu-item_ig,
+    .menu-item_m,
+    .header__icon--cart {
+      background-position: 50% 50%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: 1.5rem;
+    }
+    .menu-item_products {
+      width: 2rem;
+      height: 2rem;
+      background-image: url('{{ '6.svg' | asset_url }}');
+    }
+    .header__icon--cart {
+      width: 1.8rem;
+      height: 1.8rem;
+      background-image: url('{{ '8.svg' | asset_url }}');
+    }
+    .menu-item_ig {
+      width: 1.8rem;
+      height: 1.8rem;
+      background-image: url('{{ '4.svg' | asset_url }}');
+    }
+    .menu-item_m {
+      width: 1.7rem;
+      height: 1.7rem;
+      background-image: url('{{ '2.svg' | asset_url }}');
+    }
   }
-
   .menu-drawer-container {
     display: flex;
   }
@@ -120,7 +151,7 @@
                 {%- if link.links != blank -%}
                   <header-menu>
                     <details id="Details-HeaderMenu-{{ forloop.index }}">
-                      <summary class="header__menu-item list-menu__item link focus-inset">
+                      <summary class="header__menu-item list-menu__item link focus-inset menu-item_m">
                         <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>
                           <div class="nav-icon">
                           {% render 'icon-m' %}
@@ -157,7 +188,7 @@
                     </details>
                   </header-menu>
                 {%- else -%}
-                  <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}{% if link.url contains 'instagram' %} target="_blank"{% endif %}>
+                  <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset{% if link.title == 'Products' %} menu-item_products{% elsif link.title == 'Instagram' %} menu-item_ig{% endif %}"{% if link.current %} aria-current="page"{% endif %}{% if link.url contains 'instagram' %} target="_blank"{% endif %}>
                     {%- if link.title == 'Products' %}
                       {% if section.settings.icon_img_shop != blank %}
                         <img src="{{ section.settings.icon_img_shop | image_url: width: 500 }}" width="20" height="20">

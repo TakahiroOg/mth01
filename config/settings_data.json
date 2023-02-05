@@ -1,10 +1,11 @@
 {
   "current": {
+    "logo_width": 200,
     "favicon": "shopify:\/\/shop_images\/M.png",
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#000000",
     "gradient_accent_1": "",
-    "colors_accent_2": "#334fb4",
+    "colors_accent_2": "#000000",
     "gradient_accent_2": "",
     "colors_text": "#000000",
     "colors_outline_button_labels": "#000000",
@@ -119,6 +120,10 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
+    "checkout_logo_image": "shopify:\/\/shop_images\/MAUL_THE_HYENA_logo.png",
+    "checkout_logo_size": "small",
+    "checkout_accent_color": "#000000",
+    "checkout_button_color": "#000000",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -145,6 +150,7 @@
         "blocks": {
           "footer-0": {
             "type": "link_list",
+            "disabled": true,
             "settings": {
               "heading": "",
               "menu": "footer"
@@ -154,7 +160,7 @@
             "type": "text",
             "settings": {
               "heading": "",
-              "subtext": "<p>© 2022 - 2144 MTH01 - ALL RIGHTS RESERVED<\/p><p>TERMS AND CONDITIONS: BY ACCESSING THIS WEBSITE YOU ACKNOWLEDGE THAT ALL MATERIALS HERE ARE SUBJECT TO COPYRIGHT AND MAY NOT BE DISTRIBUTED OR REPLICATED WITHOUT THE EXPRESSED CONSENT OF MTH01. BY PROCEEDING TO PURCHASE ANY PRODUCTS OR SERVICES ON THIS SITE, YOU ALSO ACKNOWLEDGE THAT YOU HAVE CAREFULLY READ AND AGREED TO THE SITE POLICIES, AS WELL AS SHIPPING\/RETURN DETAILS THEREIN.<\/p>"
+              "subtext": "<p>2023 - Maul the Hyena - all rights reserved<\/p><p>Terms and conditions: by accessing this website you acknowledge that all materials here are subject to copyright and may not be distributed or replicated without the expressed consent of Maul the Hyena. By proceeding to purchase any products or services on this site, you also acknowledge that you have carefully read and agreed to the site policies, as well as <a href=\"\/pages\/support\" title=\"Support\">shipping\/return<\/a> details therein.<\/p>"
             }
           }
         },

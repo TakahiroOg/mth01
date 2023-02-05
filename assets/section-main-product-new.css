@@ -354,7 +354,12 @@ fieldset.product-form__input .form__label {
   margin-bottom: 0;
   margin-top: 2vh;
 }
-
+.p_subtitle {
+  letter-spacing: 0;
+}
+.variant_description {
+  display:none;
+}
 .normal-link {
   text-decoration: none;
   color: #000;

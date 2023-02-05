@@ -786,6 +786,8 @@ class VariantSelects extends HTMLElement {
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
+
+      this.updateVariantDetails(this.currentVariant);
     }
   }
 
@@ -975,6 +977,17 @@ class VariantSelects extends HTMLElement {
     this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
     return this.variantData;
   }
+
+  updateVariantDetails(currentVariant){
+    const variants = document.querySelectorAll('[data-variant-id]')
+  
+    variants.forEach( function(variant) {
+        variant.style.display = 'none';
+        if(variant.dataset.variantId == currentVariant.id){
+          variant.style.display = 'block'
+        }
+      });
+   }
 }
 
 customElements.define('variant-selects', VariantSelects);

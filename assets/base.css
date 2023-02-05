@@ -844,13 +844,6 @@ summary::-webkit-details-marker {
   box-shadow: none;
 }
 
-*:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
-}
-
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
 .focused,
 .no-js *:focus {
@@ -1835,9 +1828,9 @@ details[open] > .share-button__fallback {
 
 .field__label,
 .customer .field label {
-  font-size: 1.6rem;
+  font-size: 1rem;
   left: calc(var(--inputs-border-width) + 2rem);
-  top: calc(1rem + var(--inputs-border-width));
+  top: calc(1.6rem + var(--inputs-border-width));
   margin-bottom: 0;
   pointer-events: none;
   position: absolute;
@@ -2428,9 +2421,6 @@ input[type='checkbox'] {
   padding: 0;
 } */
 
-.icon-cart a {
-  padding: 1.2rem;
-}
 
 .header__icon--cart {
   position: relative;
@@ -2440,6 +2430,9 @@ input[type='checkbox'] {
 @media screen and (max-width: 989px) {
   menu-drawer ~ .header__icons .header__icon--account {
     display: none;
+  }
+  .icon-cart a {
+    padding: 1.2rem;
   }
 }
 
@@ -2638,7 +2631,8 @@ details[open] > .header__submenu {
 @media screen and (min-width: 750px) {
   .header__inline-menu {
     justify-content: flex-start;
-    gap: 1rem;
+    gap: 2rem;
+    height: 4.5rem;
   }
   .icon-cart {
     position: absolute;
